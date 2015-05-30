@@ -7,7 +7,7 @@ describe 'railsrc' do
       railsrc_path = File.join(File.dirname(__FILE__), "../railsrc")
 
       expect(system(<<-SH)).to eql true
-        rails new "#{rails_dir}" --rc=#{railsrc_path} --database=sqlite3
+        rails new "#{rails_dir}" --rc=#{railsrc_path} --template=#{railsrc_path} --database=sqlite3
         cd "#{rails_dir}"
         bundle install
         rails g controller Bar index
