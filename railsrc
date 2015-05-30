@@ -20,11 +20,14 @@ application do
   <<-CONFIG.strip
     config.generators do |g|
       g.orm             :active_record
-      g.orm             :active_record
       g.template_engine :slim
       g.test_framework  :rspec, fixture: false
-      g.stylesheets     false
-      g.javascripts     false
+
+      g.views           true
+      g.view_specs      false
+      g.stylesheets     false
+      g.javascripts     false
+      g.helper          false
     end
   CONFIG
 end
