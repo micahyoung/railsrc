@@ -9,7 +9,6 @@ describe 'railsrc' do
       expect(system(<<-SH)).to eql true
         rails new "#{rails_dir}" --rc=#{railsrc_path} --template=#{railsrc_path} --database=sqlite3
         cd "#{rails_dir}"
-        bundle install
         rails g controller Bar index
         rails g model Baz name:string
         rake db:migrate

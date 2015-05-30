@@ -13,7 +13,9 @@ gem_group :development, :test do
   gem 'rspec-rails'
 end
 
-generate('rspec:install')
+after_bundle do
+  generate 'rspec:install'
+end
 
 # Generators config
 application do
