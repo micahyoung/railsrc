@@ -1,0 +1,59 @@
+<<-RCOPTIONS
+--database=postgresql
+--skip-test-unit
+--skip-turbolinks
+--skip-bundle
+--skip-keeps
+--template ~/.railsrc
+RCOPTIONS
+
+gem 'slim'
+
+gem_group :development, :test do
+  gem 'rspec-rails'
+end
+
+generate('rspec:install')
+
+# Generators config
+application do
+  <<-CONFIG.strip
+    config.generators do |g|
+      g.orm             :active_record
+      g.orm             :active_record
+      g.template_engine :slim
+      g.test_framework  :rspec, fixture: false
+      g.stylesheets     false
+      g.javascripts     false
+    end
+  CONFIG
+end
+
+# Generator template for controller specs
+create_file "lib/templates/rspec/model/model_spec.rb", <<-FILE
+require 'rails_helper'
+
+<% module_namespacing do -%>
+describe <%= class_name %> do
+  pending "add some examples to (or delete)"
+end
+<% end -%>
+FILE
+
+# Generator template for controller specs
+create_file "lib/templates/rspec/controller/controller_spec.rb", <<-FILE
+require 'rails_helper'
+
+<% module_namespacing do -%>
+describe <%= class_name %>Controller do
+<% for action in actions -%>
+  describe "GET #<%= action %>" do
+    it "returns http success" do
+      get :<%= action %>
+      expect(response).to have_http_status(:success)
+    end
+  end
+<% end -%>
+end
+<% end -%>
+FILE
