@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/micahyoung/railsrc.svg?branch=master)](https://travis-ci.org/micahyoung/railsrc)
 # Hybrid railsrc / rails app template
 
 ## What is this?
