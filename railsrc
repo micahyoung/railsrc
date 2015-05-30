@@ -19,9 +19,9 @@ generate('rspec:install')
 application do
   <<-CONFIG.strip
     config.generators do |g|
-      g.orm             :active_record
+      g.orm             :active_record
       g.template_engine :slim
-      g.test_framework  :rspec, fixture: false
+      g.test_framework  :rspec, fixture: false
 
       g.views           true
       g.view_specs      false
