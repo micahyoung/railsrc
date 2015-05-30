@@ -38,7 +38,9 @@ require 'rails_helper'
 
 <% module_namespacing do -%>
 describe <%= class_name %> do
-  pending "add some examples to (or delete)"
+  it do
+    <%= class_name %>.new
+  end
 end
 <% end -%>
 FILE
