@@ -7,7 +7,7 @@
 --template ~/.railsrc
 RCOPTIONS
 
-gem 'slim'
+gem 'slim-rails'
 
 gem_group :development, :test do
   gem 'rspec-rails'
