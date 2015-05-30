@@ -2,7 +2,7 @@
 --database=postgresql
 --skip-test-unit
 --skip-turbolinks
---skip-bundle
+--skip-javascript
 --skip-keeps
 --template ~/.railsrc
 RCOPTIONS
