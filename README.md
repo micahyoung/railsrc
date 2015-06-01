@@ -6,8 +6,16 @@
 This is my hybrid railsrc and app template, including several of my preferred defaults.
 
 ## Instructions
+```bash
+git clone https://github.com/micahyoung/railsrc.git my_dir
 
-Just move/symlink this to ~/.railsrc and modify.
+# then 
+rails new ~/Code/Ruby/weblog --rc=my_dir/railsrc --template=my_dir/railsrc
+
+# or to use globally 
+mv my_dir/railsrc ~/.railsrc
+rails new ~/Code/Ruby/weblog  # it just works!
+```
 
 ## Why?
 
