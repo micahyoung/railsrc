@@ -7,6 +7,10 @@
 --template ~/.railsrc
 RCOPTIONS
 
+# ^^^ railsrc options ^^^
+# vvv rails template  vvv
+
+
 gem 'slim-rails'
 
 gem_group :development, :test do
