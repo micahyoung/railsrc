@@ -7,13 +7,13 @@ describe 'railsrc' do
       railsrc_path = File.join(File.dirname(__FILE__), "../railsrc")
 
       expect(system(<<-SH)).to eql true
-        rails new "#{rails_dir}" --rc=#{railsrc_path} --template=#{railsrc_path} --database=sqlite3 --skip-spring
+        rails new "#{rails_dir}" --rc=#{railsrc_path} --template=#{railsrc_path} --database=sqlite3 --skip-spring --skip-bundle
         cd "#{rails_dir}"
-        rails g controller Bar index
-        rails g model Baz name:string
+        rails g model Bar name:string
+        rails g controller Bars index
         rake db:migrate
-        rspec spec/controllers/bar_controller_spec.rb \
-              spec/models/baz_spec.rb
+        rspec spec/models/bar_spec.rb \
+              spec/controllers/bars_controller_spec.rb
       SH
     end
   end

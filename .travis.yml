@@ -1,5 +1,6 @@
 language: ruby
+cache: bundler
 rvm:
   - 2.2.0
-install:
-  - gem install rails rspec
+gemfile:
+  - gemfiles/rails4_2.gemfile
